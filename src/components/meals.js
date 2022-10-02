@@ -1,15 +1,27 @@
 import React from "react";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from '../context';
+import {BsHandThumbsUp} from 'react-icons/bs'
 
 const Meals = () => {
 
   const {meals} = useGlobalContext();
   
-  return <section>
-    
+  return <section className="section-center">
+
     {meals.map((singleMeal) => {
-      console.log(singleMeal);
-     return <h4>single meal</h4>
+
+      const { idMeal, strMeal: tittle, strMealThumb: image } = singleMeal
+      
+      return <article key={idMeal} className="single-meal" >
+        <img src={image} className="img" alt="mealImage" />
+
+          <footer>
+          <h5>{tittle}</h5>
+          <button className="like-btn"> <BsHandThumbsUp/> </button>
+          </footer>
+
+      </article>
+      
    })}
   
   </section>

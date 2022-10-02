@@ -11,6 +11,7 @@ function App() {
       <Meals />
       {/* <Modal /> */}
       {/* <Favorites /> */}
+      
   </main>
   );
 }

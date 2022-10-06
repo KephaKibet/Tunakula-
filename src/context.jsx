@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const AppContext = React.createContext()
 
-const allMeals ='https://www.themealdb.com/api/json/v1/1/search.php?s=a';
+const allMeals ='https://www.themealdb.com/api/json/v1/1/search.php?s=';
 const randomMeals ='https://www.themealdb.com/api/json/v1/1/random.php';
 // http://api.weatherapi.com/v1/current.json?key=&q=London&aqi=no
 
@@ -53,7 +53,7 @@ const AppProvider = ({ children }) => {
 
 
   useEffect(() => {
-    if(!searchTerm)
+    if(!searchTerm) return
     fetchMeals(`${allMeals}${searchTerm}`)
   }, [searchTerm])
 

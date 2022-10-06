@@ -9,7 +9,7 @@ function App() {
     <main>
       <Search />
       <Meals />
-      {/* <Modal /> */}
+      <Modal />
       {/* <Favorites /> */}
       
   </main>

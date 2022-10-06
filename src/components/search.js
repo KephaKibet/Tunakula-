@@ -18,12 +18,11 @@ const Search = () => {
 
     if (text) {
       setSearchTerm(text)
-      setText('')
     }
   }
 
   const handleRandomMeal = () => {
-    setSearchTerm(text)
+    setSearchTerm('')
     setText('')
     fetchRandomMeals()
   

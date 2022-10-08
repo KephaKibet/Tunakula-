@@ -57,6 +57,10 @@ const AppProvider = ({ children }) => {
     setShowModal(true);
   }
 
+  const closeModal = () => {
+    
+    setShowModal(false)
+  }
 
  
   useEffect(() => {
@@ -70,7 +74,7 @@ const AppProvider = ({ children }) => {
   }, [searchTerm])
 
 
-  return <AppContext.Provider value = {{loading,meals, setSearchTerm, fetchRandomMeals, showModal, selectedMeal, selectMeal}}>
+  return <AppContext.Provider value = {{loading,meals, setSearchTerm, fetchRandomMeals, showModal, selectedMeal, selectMeal ,closeModal}}>
     {children}
   </AppContext.Provider>
 }
@@ -79,4 +83,5 @@ export const useGlobalContext = () => {
   return useContext(AppContext)
 }
 
-export {AppContext, AppProvider}
+export { AppContext, AppProvider }
+

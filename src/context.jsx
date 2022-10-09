@@ -90,7 +90,7 @@ const AppProvider = ({ children }) => {
   }, [searchTerm])
 
 
-  return <AppContext.Provider value = {{loading,meals, setSearchTerm, fetchRandomMeals, showModal, selectedMeal, selectMeal ,closeModal ,addToFavorites, removeFromFavorites}}>
+  return <AppContext.Provider value = {{loading,meals, setSearchTerm, fetchRandomMeals, showModal, selectedMeal, selectMeal ,closeModal ,addToFavorites, removeFromFavorites, favorites}}>
     {children}
   </AppContext.Provider>
 }

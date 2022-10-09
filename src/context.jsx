@@ -17,7 +17,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [showModal, setShowModal] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState(false);
-  const[favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState([])
   
   const fetchMeals = async (url) => {
     setLoading(true)
@@ -48,9 +48,10 @@ const AppProvider = ({ children }) => {
   }
 
   const selectMeal = (idMeal, favoriteMeal) => {
-    console.log("hel")
+  
     let meal;
-    meal = meals.find((meal) => meal.idMeal === idMeal)
+    if(favoriteMeal)
+    meal = favorites.find((meal) => meal.idMeal === idMeal)
   
     setSelectedMeal(meal);
     setShowModal(true);
@@ -74,7 +75,7 @@ const AppProvider = ({ children }) => {
   }
 
   const removeFromFavorites = (idMeal) => {
-    const updatedFavorites = favorites.filter((meal) => meal.idMeal !== meal.id);
+    const updatedFavorites = favorites.filter((meal) => meal.idMeal !== idMeal);
     setFavorites(updatedFavorites)
   }
 

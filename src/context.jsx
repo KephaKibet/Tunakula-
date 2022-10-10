@@ -62,8 +62,12 @@ const AppProvider = ({ children }) => {
   const selectMeal = (idMeal, favoriteMeal) => {
   
     let meal;
-    if(favoriteMeal)
-    meal = favorites.find((meal) => meal.idMeal === idMeal)
+    if(favoriteMeal){
+      meal = favorites.find((meal) => meal.idMeal === idMeal)
+    }
+    else {
+      meal=meals.find((meal)=>meal.idMeal===idMeal)
+    }
   
     setSelectedMeal(meal);
     setShowModal(true);
@@ -75,7 +79,6 @@ const AppProvider = ({ children }) => {
   }
 
   const addToFavorites = (idMeal) => {
-    console.log(idMeal)
     
     const meal = meals.find((meal) => meal.idMeal === idMeal)
     const alreadyFavorite = favorites.find((meal) => meal.idMeal === idMeal);
